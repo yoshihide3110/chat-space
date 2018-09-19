@@ -18,9 +18,9 @@
 |name|string|null: false, |
 |e-mail|string|null: false, unique: true|
 
-hasm_any :message
+hasm_any :messages
 belongs_to :member
-has_many :groups, through
+has_many :groups, through: :members
 
 
 ## messagesテーブル
@@ -45,6 +45,6 @@ has_many :groups, through
 |name|text|null: false, foreign_key: true|
 
 ### Association
-has_many :users, :through:members
+has_many :users, through: :members
 has_many :members
 has_many :messages
