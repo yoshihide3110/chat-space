@@ -4,8 +4,8 @@
 
 |Columu|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
-|group_id|integer|index: true, null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -18,7 +18,7 @@
 |name|string|null: false, index:true|
 |e-mail|string|null: false, unique: true|
 
-hasm_any :messages
+has_many :messages
 belongs_to :member
 has_many :groups, through: :members
 
@@ -45,6 +45,6 @@ has_many :groups, through: :members
 |name|text|null: false, foreign_key: true|
 
 ### Association
-has_many :users, through: :members
 has_many :members
+has_many :users, through: :members
 has_many :messages
