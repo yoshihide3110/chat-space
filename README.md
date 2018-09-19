@@ -15,28 +15,37 @@
 ## usersテーブル
 |Columu|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
-|e-mail|string|null: false, foreign_key: true|
+|name|string|null: false, |
+|e-mail|string|null: false, unique: true|
+
+hasm_any :message
+belongs_to :member
+has_many :groups, through
+
+
+## messagesテーブル
+|Columu|Type|Optionns|
+|------|----|--------|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
+|image|string|
+|body|text|
+
 
 
 ### Association
-- belongs_to :id
-- belongs_to :name
-- belongs_to :e-mail
+- belongs_to :users
+- belongs_to :groups
 
 
 
-##messagesテーブル
+## groupsテーブル
 |Columu|Type|Optionns|
 |------|----|--------|
 user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|image|string|
-
-
+|name|text|null: fals, foreign_key: true|
 
 ### Association
-- belongs_to :user_id
-- has_many :group_id
-- has_many :image
+has_many :users, :through:members
+has_many :members
+has_many :messages
