@@ -42,7 +42,6 @@ has_many :groups, through
 ## groupsテーブル
 |Columu|Type|Optionns|
 |------|----|--------|
-user_id|integer|null: false, foreign_key: true|
 |name|text|null: fals, foreign_key: true|
 
 ### Association
