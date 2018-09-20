@@ -2,7 +2,7 @@
 
 ## membersテーブル
 
-|Columu|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -13,21 +13,21 @@
 
 
 ## usersテーブル
-|Columu|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index:true|
+|name|string|null: false, index:true, unique: true|
 |e-mail|string|null: false, unique: true|
 
 has_many :messages
-belongs_to :member
+has_many :members
 has_many :groups, through: :members
 
 
 ## messagesテーブル
-|Columu|Type|Optionns|
+|Column|Type|Optionns|
 |------|----|--------|
-|user_id|integer|null: false, foreign_key: true, index: true|
-|group_id|integer|null: false, foreign_key: true, index: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 |image|string|
 |body|text|
 
@@ -40,9 +40,9 @@ has_many :groups, through: :members
 
 
 ## groupsテーブル
-|Columu|Type|Optionns|
+|Column|Type|Optionns|
 |------|----|--------|
-|name|text|null: false, foreign_key: true|
+|name|text|null: false|
 
 ### Association
 has_many :members
