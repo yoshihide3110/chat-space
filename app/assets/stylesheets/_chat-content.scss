@@ -1,0 +1,116 @@
+.chat-content {
+  width: calc(100vw - 300px);
+  height: 100%;
+  background: $content_back_color;
+  float: right;
+  position: relative;
+
+  &_head{
+    height: 110px;
+    border: thin solid $border_color;
+    padding-left: 40px;
+    position: relative;
+    background: white;
+
+    &__name {
+      font-size: 20px;
+      color: $current_group_color;
+      padding-top: 35px;
+    }
+
+    &__member-name {
+      font-size: 12px;
+      color: $current_group_mem_color;
+      padding-top: 15px;
+}
+
+    &__edit {
+      font-size: 16px;
+      color: $btn_color;
+      text-align: center;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 20px 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 40px;
+      margin: auto;
+      border: thin solid $btn_color;
+    }
+  }
+  &_time-line {
+    overflow: scroll;
+    padding-top: 46px;
+    padding-left: 40px;
+    height: calc(100vh - 139px);
+
+    &__user-name {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+      color: $current_group_color;
+    }
+    &__message {
+      color: $current_group_mem_color;
+      font-size: 14px;
+      padding: 10px 0 40px;
+      clear: both;
+    }
+    &__date {
+      padding-left: 10px;
+      color: $current_group_mem_color;
+      font-size: 12px;
+      float: left;
+    }
+  }
+  &_create {
+    width: calc(100vw - 300px);
+    height: 90px;
+    background-color: green;
+    position: relative;
+    background: $content_input_bar_color;
+
+    &__input {
+      height: 50px;
+      font-size: 16px;
+      line-height: 50px;
+      width: calc(100% - 195px);
+      background: $border_color;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 40px;
+      margin: auto;
+      &__text {
+        color: $current_group_name_color;
+      }
+    }
+    .icon {
+      height: 50px;
+      line-height: 50px;
+      float: right;
+      padding-right: 10px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 80px;
+      margin: auto;
+      color: black;
+    }
+    &__send {
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      background-color: $btn_color;
+      height: 50px;
+      width: 100px;
+      float: right;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 40px;
+      margin: auto;
+      }
+  }
+}
