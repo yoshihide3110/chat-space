@@ -5,11 +5,14 @@
       .chat-sidebar_top__user-name
         %p
           = "USER_NAME"
-          %a.chat-sidebar_top__user-name__icon
-            %i.fa.fa-edit
-            %i.fa.fa-cog
-
-    .chat-side_group
+      %ul.chat-sidebar_top__lists
+        %li.list
+          = link_to do
+            = fa_icon 'cog', class: 'icon'
+        %li.list
+          = link_to do
+            = fa_icon 'edit', class: 'icon'
+    .chat-sidebar_group
       .chat-sidebar_group__name
         %p
           = "Sampleグループ"
@@ -32,7 +35,7 @@
         %p
           = "ユーザーネーム"
       .chat-content_time-line__date
-        %P
+        %p
           = "2018/09/20 07.19.13"
       .chat-content_time-line__message
         %p
@@ -41,7 +44,7 @@
         %p
           = "ユーザーネーム"
       .chat-content_time-line__date
-        %P
+        %p
           = "2018/09/20 07.19.13"
       .chat-content_time-line__message
         %p
@@ -50,10 +53,12 @@
     .chat-content_create
       .chat-content_create__input
         .chat-content_create__input__text
-          %P
+          %p
             = "type a message"
-      .chat-content_create__icon
-        %i.far.fa-image
+      %ul.chat-content_create__icon
+        %li.icon
+          = link_to do
+            = fa_icon 'image', class: 'icon'
       .chat-content_create__send
         %p
           = "Send"

@@ -4,7 +4,10 @@
 @import "header";
 @import "chat-sidebar";
 @import "chat-content";
-@import "font-awesome-sprockets";
+// @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "create";
 
+/*
+ *= require font-awesome
+ */
