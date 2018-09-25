@@ -1,0 +1,59 @@
+.chat
+  .header チャットグループが作成されました
+  .chat-sidebar
+    .chat-sidebar_top
+      .chat-sidebar_top__user-name
+        %p
+          = "USER_NAME"
+          %a.chat-sidebar_top__user-name__icon
+            %i.fa.fa-edit
+            %i.fa.fa-cog
+
+    .chat-side_group
+      .chat-sidebar_group__name
+        %p
+          = "Sampleグループ"
+      .chat-sidebar_group__text
+        %p
+          = "まだメッセージはありません"
+  .chat-content
+    .chat-content_head
+      .chat-content_head__name
+        %p
+          = "Sampleグループ"
+      .chat-content_head__member-name
+        %p
+          = "Member: name"
+      .chat-content_head__edit
+        %p
+          = "EDIT"
+    .chat-content_time-line
+      .chat-content_time-line__user-name
+        %p
+          = "ユーザーネーム"
+      .chat-content_time-line__date
+        %P
+          = "2018/09/20 07.19.13"
+      .chat-content_time-line__message
+        %p
+          = "ユーザー投稿"
+      .chat-content_time-line__user-name
+        %p
+          = "ユーザーネーム"
+      .chat-content_time-line__date
+        %P
+          = "2018/09/20 07.19.13"
+      .chat-content_time-line__message
+        %p
+          = "ユーザー投稿"
+
+    .chat-content_create
+      .chat-content_create__input
+        .chat-content_create__input__text
+          %P
+            = "type a message"
+      .chat-content_create__icon
+        %i.far.fa-image
+      .chat-content_create__send
+        %p
+          = "Send"
