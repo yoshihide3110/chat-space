@@ -43,7 +43,7 @@
     overflow: scroll;
     padding-top: 46px;
     padding-left: 40px;
-    height: calc(100vh - 248px);
+    height: calc(100vh - 139px);
 
     &__user-name {
       font-size: 16px;
@@ -86,7 +86,7 @@
         color: $current_group_name_color;
       }
     }
-    &__icon {
+    .icon {
       height: 50px;
       line-height: 50px;
       float: right;
@@ -94,9 +94,9 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 155px;
+      right: 80px;
       margin: auto;
-      color:black
+      color: black;
     }
     &__send {
       color: white;
