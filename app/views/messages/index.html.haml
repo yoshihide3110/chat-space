@@ -1,24 +1,5 @@
 .chat
   .header チャットグループが作成されました
-  .chat-sidebar
-    .chat-sidebar_top
-      .chat-sidebar_top__user-name
-        %p
-          = "USER_NAME"
-      %ul.chat-sidebar_top__lists
-        %li.list
-          = link_to do
-            = fa_icon 'cog', class: 'icon'
-        %li.list
-          = link_to do
-            = fa_icon 'edit', class: 'icon'
-    .chat-sidebar_group
-      .chat-sidebar_group__name
-        %p
-          = "Sampleグループ"
-      .chat-sidebar_group__text
-        %p
-          = "まだメッセージはありません"
   .chat-content
     .chat-content_head
       .chat-content_head__name
@@ -31,34 +12,45 @@
         %p
           = "EDIT"
     .chat-content_time-line
-      .chat-content_time-line__user-name
-        %p
-          = "ユーザーネーム"
-      .chat-content_time-line__date
-        %p
-          = "2018/09/20 07.19.13"
-      .chat-content_time-line__message
-        %p
-          = "ユーザー投稿"
-      .chat-content_time-line__user-name
-        %p
-          = "ユーザーネーム"
-      .chat-content_time-line__date
-        %p
-          = "2018/09/20 07.19.13"
-      .chat-content_time-line__message
-        %p
-          = "ユーザー投稿"
+      = render @message
+      / .chat-content_time-line__user-name
+      /   %p
+      /     = "ユーザーネーム"
+      / .chat-content_time-line__date
+      /   %p
+      /     = "2018/09/20 07.19.13"
+      / .chat-content_time-line__message
+      /   %p
+      /     = "ユーザー投稿"
+      / .chat-content_time-line__user-name
+      /   %p
+      /     = "ユーザーネーム"
+      / .chat-content_time-line__date
+      /   %p
+      /     = "2018/09/20 07.19.13"
+      / .chat-content_time-line__message
+      /   %p
+      /     = "ユーザー投稿"
 
-    .chat-content_create
-      .chat-content_create__input
-        .chat-content_create__input__text
-          %p
-            = "type a message"
-      %ul.chat-content_create__icon
-        %li.icon
-          = link_to do
-            = fa_icon 'image', class: 'icon'
-      .chat-content_create__send
-        %p
-          = "Send"
+
+  .chat-content_create
+    = form_for [@group, @message] do |f|
+      =f.text_field :group, class: 'chat-content_create__input', placeholder: 'type a message'
+      .form__text
+        = f.label :image, class: '.chat-content_create__text__image' do
+          =  fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class:'hidden'
+      = f.submit 'Send', class: '.chat-content_create__submit'
+
+    / .chat-content_create
+    /   .chat-content_create__input
+    /     .chat-content_create__input__text
+    /       %p
+    /         = "type a message"
+    /   %ul.chat-content_create__icon
+    /     %li.icon
+    /       = link_to do
+    /         = fa_icon 'image', class: 'icon'
+    /   .chat-content_create__send
+    /     %p
+    /       = "Send"
