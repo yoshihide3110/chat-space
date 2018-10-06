@@ -9,6 +9,7 @@
     background: $side_bar_top_color;
     padding-right: 20px;
     color: $text_color;
+
     &__user-name {
       display: inline-block;
       color: $text_color;
@@ -17,7 +18,8 @@
       padding-top: 35px;
       padding-left: 20px;
     }
-    &__lists {
+
+  &__lists {
       display: inline-block;
       color: $text_color;
       float: right;
@@ -25,30 +27,49 @@
       line-height: 25px;
       text-decoration: none;
       font-size: 20px;
-    .list {
-        display: inline-block;
-        color: $text_color;
-        float: right;
-        line-height: 25px;
-        text-decoration: none;
-      }
+      display: -webkit-flex;
+      display: flex;
+        a {
+          color: white;
+
+        &_list {
+
+            color: $text_color;
+            float: right;
+            line-height: 25px;
+            text-decoration: none;
+        }
+        &_list {
+
+            color: $text_color;
+            float: right;
+            line-height: 25px;
+            text-decoration: none;
+          }
+        }
     }
   }
-  &_group {
+
+  .groups {
     height:100%;
     background: $side_bar_content_color;
-    &__name {
-      font-size: 15px;
-      color: $text_color;
-      padding-left:20px;
-      padding-top:20px;
+    padding-left: 20px;
+
+      &__name {
+        color: $text_color;
+        margin-top: 20px;
+        font-size: 15px;
+         a {
+          color:white;
+        }
+      }
+        &__message {
+          color: white;
+          font-size: 11px;
+          color: $text_color;
+          padding-top: 5px;
+          padding-bottom: 40px;
+        }
     }
-    &__text {
-      font-size: 11px;
-      color: $text_color;
-      padding-left: 20px;
-      padding-top: 5px;
-    }
-  }
 }
 
