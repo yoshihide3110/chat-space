@@ -1,11 +1,11 @@
-.message{"data-messages-body": "#{message.body}"}
-  .upper-message
-    .upper-message__user-name
+.message
+  .top-message
+    .top-message__user-name
       = message.user.name
-    .upper-message__date
+    .top-message__date
       = message.created_at
-  .lower-meesage
+  .bottom-meesage
     - if message.body.present?
-      %p.lower-message__content
+      %p.bottom-message__content
         = message.body
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+    = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
