@@ -16,8 +16,8 @@
 @import "config/colors";
 @import "form";
 @import "reset";
-// @import "mixin/mixin";
-// @import "vendor_prefix";
+@import "mixins/mixin";
+@import "mixins/vendor_prefix";
 /*
  *= require font-awesome
  */

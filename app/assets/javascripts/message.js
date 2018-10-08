@@ -1,28 +1,29 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="top-message">
-                  <div class="top-message__user-name">
-                     ${message.user.name}
-                   </div>
-                  <div class="top-message__date">
+    var html = `<div class="upper-message">
+                    <div class="top-message__user-name">
+                     ${message.user_name}
+                     </div>
+                    <div class="top-message__date">
                     ${message.creted_at}
-                  </div>
-                  <div class="bottom-meesage">
-                    ${body}
-                    ${image}
+                    </div>
+                    <div class="bottom-message">
+                    ${message.body}
+                    ${message.image}
                   </div>
                 </div>`
     return html
   }
-function downFunc() {
-  $("#message_body").animate({top: "200px"}, 1000, "swing");
-}
-  $('#message_body').on('Submit', function(e){
+  // function scrollBottom(){
+  //   $(".messages").animate({scrollTop: $(".messages")[10].scrollHeight}, "slow")
+  // }
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     console.log(this)
     var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax ({
+    var ur l= $(this).attr('action')
+    console.log(formData)
+    $.aj a ({
       url: url,
       type: "POST",
       data: formData,
@@ -32,11 +33,13 @@ function downFunc() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.form_submit').val('');
-  })
+      $('.new_message').append(html);
+      $('form__message').val('');
+      $('form__submit').prop('disabled', false);
+      })
     .fail(function(){
       alert('error');
+    })
   })
-  })
-});
+    })
+
