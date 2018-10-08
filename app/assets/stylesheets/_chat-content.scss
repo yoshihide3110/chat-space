@@ -47,6 +47,7 @@
 
 
   .messages {
+    display: flexbox;
     box-sizing: border-box;
     overflow:scroll;
     padding-top: 46px;
