@@ -14,16 +14,13 @@ $(function(){
                 </div>`
     return html
   }
-  // function scrollBottom(){
-  //   $(".messages").animate({scrollTop: $(".messages")[10].scrollHeight}, "slow")
-  // }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     console.log(this)
     var formData = new FormData(this);
-    var ur l= $(this).attr('action')
-    console.log(formData)
-    $.aj a ({
+    var url= $(this).attr('action')
+    $.ajax ({
       url: url,
       type: "POST",
       data: formData,
@@ -41,5 +38,5 @@ $(function(){
       alert('error');
     })
   })
-    })
+})
 
