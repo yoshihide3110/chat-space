@@ -1,27 +1,5 @@
 $(function(){
-  setInterval(function){
-    $.ajax({
-      url:location.href.json,
-    })
-    .done(function(json){
-    var insertHTML = '';
-    json.message.forEach(function(message){
-      interHTML += buildHTML(message);
-    });
-    $('.chat-wrapper').html(insertHTML);
-    })
-    .fail(function(data){
-      alert('自動更新に失敗しました')
-    });
-  } else {
-    clearInterval(interval);
-  }, 5000);
-});
   function buildHTML(message){
-    var insertImage = '';
-    if(message.image.url){
-      insertImage = '<imag src="${message.image.url}">';
-    }
     var html = `<div class="upper-message">
                     <div class="top-message__user-name">
                      ${message.user_name}
@@ -31,12 +9,11 @@ $(function(){
                     </div>
                     <div class="bottom-message">
                     ${message.body}
-                    ${insertImage}
+                    ${message.image}
                   </div>
                 </div>`
     return html
   }
-
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
