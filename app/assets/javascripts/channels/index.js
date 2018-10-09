@@ -24,7 +24,7 @@ $(function() {
       data: { keyword: input },
       dataType: 'json',
     })
- .done(function(user) {
+ .done(function(users) {
       $("#user-search-result").empty();
       var chat_member_list = [];
       $("#chat-group-users").find('.chat_member_id').each( function( element ) {
