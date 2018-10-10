@@ -38,7 +38,6 @@ $(function() {
         }
       });
     })
-
     .fail(function(){
       alert('Error');
     })
