@@ -14,10 +14,15 @@
 @import "modules/flash";
 @import "font-awesome";
 @import "config/colors";
-@import "form";
-@import "reset";
-@import "mixins/mixin";
-@import "mixins/vendor_prefix";
+@import "form"
+// @import "config/reset";
+// @import "mixins/mixin";
+// @import "mixins/vendor_prefix";
+// @import "modules/side_bar";
+// @import "modules/chat";
+// @import "modules/user";
+// @import "messages/messages.scss"
+
 /*
  *= require font-awesome
  */
