@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 .message{"data-message-id": "#{message.id}"}
+=======
+.message
+>>>>>>> master
   .top-message
     .top-message__user-name
       = message.user.name
     .top-message__date
-      = message.created_at.strftime("%Y年%m月%d日　%H時%M分")
+      = message.created_at
   .bottom-meesage
+<<<<<<< HEAD
     %p.bottom-message__content
       = message.body
       = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
+=======
+    - if message.body.present?
+      %p.bottom-message__content
+        = message.body
+    = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
+>>>>>>> master
