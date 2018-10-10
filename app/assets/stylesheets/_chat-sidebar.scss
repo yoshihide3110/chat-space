@@ -1,7 +1,8 @@
+
 .chat-sidebar {
   width: 300px;
-  height: 100vh;
   float: left;
+  height: 100vh;
   background: $side_bar_content_color;
 
   &_top {
@@ -51,7 +52,7 @@
   }
 
   .groups {
-    height:100%;
+    height:calc(100vh -200px);
     background: $side_bar_content_color;
     padding-left: 20px;
 
@@ -72,4 +73,3 @@
         }
     }
 }
-
