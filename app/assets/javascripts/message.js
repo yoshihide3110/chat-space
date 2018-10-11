@@ -53,6 +53,7 @@ function scrollMessage(){
         $('.form__submit').removeAttr('disabled');
       })
   });
+
     var interval = setInterval(update,5000);
    function update(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){

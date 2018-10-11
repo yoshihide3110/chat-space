@@ -6,6 +6,7 @@ $(function() {
                 </div>`
     return html;
   }
+
   function build_chatmember_HTML(user_id,user_name) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                 <input name='group[user_ids][]' type='hidden' value="${ user_id }">
