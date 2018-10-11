@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 .message
+=======
+.message{"data-message-id": "#{message.id}"}
+>>>>>>> automatic
   .top-message
     .top-message__user-name
       = message.user.name
     .top-message__date
       = message.created_at
   .bottom-meesage
+    %p.bottom-message__content
+      = message.body
+      = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
     - if message.body.present?
       %p.bottom-message__content
         = message.body

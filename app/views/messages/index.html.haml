@@ -29,8 +29,8 @@
       .chat-content_head__edit
         %p
           = link_to "EDIT", edit_group_path(@group)
-      .messages
-        =render partial: "message", collection: @messages
+    .messages
+      =render partial: "message", collection: @messages
 
     .chat-form
       .form
