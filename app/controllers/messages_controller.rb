@@ -3,15 +3,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-<<<<<<< HEAD
-    @messages = @group.messages.includes(:user)
-=======
     @messages = @group.messages.includes(:user)git
     respond_to do |format|
       format.html
       format.json {@new_messages = @messages.where('id > ?', params[:message][:id])}
     end
->>>>>>> automatic
   end
 
   def create
