@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
 
-
   def index
   end
 
@@ -18,13 +17,19 @@ class GroupsController < ApplicationController
     render :new
  end
 end
-    def update
-      if @group.update(group_params)
-        redirect_to group_message_path(@group), notice: 'グループを編集しました'
-      else
-        render :edit
-      end
+
+def edit
+    set_group
+  end
+
+  def update
+    set_group
+    if @group.update(group_params)
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+    else
+      render :edit
     end
+  end
 
   private
   def group_params
@@ -33,5 +38,4 @@ end
   def set_group
     @group =  Group.find(params[:id])
   end
-
 end
