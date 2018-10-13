@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
-    var content = message.body? `<p class="bottom-message__content">
-                    ${message.body}
+    var content = message.content? `<p class="bottom-message__content">
+                    ${message.content}
                   </p>` : "";
 
     var image = message.image? `<img src="${message.image}" class="bottom-message__image">` : "";

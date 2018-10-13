@@ -10,5 +10,5 @@
       = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
     - if message.body.present?
       %p.bottom-message__content
-        = message.body
+        = message.content
     = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
