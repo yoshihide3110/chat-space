@@ -29,7 +29,7 @@ has_many :groups, through: :members
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |image|string|
-|body|text|
+|content|text|
 
 
 

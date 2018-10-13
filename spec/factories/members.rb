@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :message do
+  factory :member do
   name Faker::Team.name
   end
 end
