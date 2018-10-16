@@ -50,14 +50,13 @@ function scrollMessage(){
       alert('error');
     })
       .always(function(){
-        $('.form__submit').removeAttr('disabled');
+        $('.form__submit').prop('disabled', false);
       })
   });
-    var interval = setInterval(update,5000);
+    var interval = setInterval(update,2000);
    function update(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
       var message_id = $('.message:last').data('messageId');
-      console.log(message_id)
       $.ajax({
         url: location.href.json,
         type: "GET",
@@ -69,7 +68,7 @@ function scrollMessage(){
         data.forEach(function(message){
           if( message.id > message_id ){
             insertHTML += buildHTML(message);
-            $('.messages').append(insertHTML);
+            $('.message').append(insertHTML);
             scrollMessage();
           }
         });
