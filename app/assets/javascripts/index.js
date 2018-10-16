@@ -18,6 +18,7 @@
   $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $(this).val();
+    console.log(input);
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -30,7 +31,7 @@
       $("#chat-group-users").find('.chat_member_id').each( function( element ) {
         chat_member_list.push(element.value);
       });
-      user.forEach(function(user){
+      users.forEach(function(user){
         if(chat_member_list.indexOf(String(user.id)) == -1){
           html = buildHTML(user);
           $('#user-search-result').append(html);
