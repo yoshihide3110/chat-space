@@ -34,7 +34,6 @@
         if(chat_member_list.indexOf(String(user.id)) == -1){
           html = buildHTML(user);
           $('#user-search-result').append(html);
-          console.log(html)
         }
       });
     })
