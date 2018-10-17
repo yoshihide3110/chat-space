@@ -43,7 +43,8 @@ function scrollMessage(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#new_message').val('');
+      $('.form__message').val('');
+      $('.hidden').val('');
       scrollMessage();
       })
       .fail(function(){
@@ -51,6 +52,7 @@ function scrollMessage(){
     })
       .always(function(){
         $('.form__submit').prop('disabled', false);
+
       })
   });
     var interval = setInterval(update,2000);
@@ -60,7 +62,7 @@ function scrollMessage(){
       $.ajax({
         url: location.href.json,
         type: "GET",
-        data: {id: message_id },
+        data: {id: message_id},
         dataType: 'json'
       })
       .done(function(data) {

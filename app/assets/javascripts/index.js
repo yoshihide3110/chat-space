@@ -1,4 +1,4 @@
- $(function() {
+$(function() {
   function buildHTML(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
@@ -18,14 +18,15 @@
   $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $(this).val();
-    console.log(input);
     $.ajax({
       type: 'GET',
       url: '/users',
       data: { keyword: input },
       dataType: 'json',
     })
- .done(function(users) {
+  .done(function(users) {
+    if (input.length === 0) {
+    } else {
       $("#user-search-result").empty();
       var chat_member_list = [];
       $("#chat-group-users").find('.chat_member_id').each( function( element ) {
@@ -37,7 +38,8 @@
           $('#user-search-result').append(html);
         }
       });
-    })
+    }
+  })
     .fail(function(){
       alert('Error');
     })
