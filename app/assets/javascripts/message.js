@@ -60,7 +60,7 @@ function scrollMessage(){
       $.ajax({
         url: location.href.json,
         type: "GET",
-        data: {message: {id: message_id}},
+        data: {id: message_id },
         dataType: 'json'
       })
       .done(function(data) {

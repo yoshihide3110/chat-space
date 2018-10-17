@@ -5,9 +5,6 @@
     .top-message__date
       = message.created_at
   .bottom-meesage
-    %p.bottom-message__content
-      = message.content
-      = image_tag message.image.url, class: 'bottom-message__image' if message.image.present?
     - if message.content.present?
       %p.bottom-message__content
         = message.content

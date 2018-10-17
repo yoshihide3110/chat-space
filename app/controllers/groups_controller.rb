@@ -17,7 +17,6 @@ class GroupsController < ApplicationController
     render :new
  end
 end
-
 def edit
     set_group
   end
