@@ -25,12 +25,13 @@ $(function() {
       dataType: 'json',
     })
   .done(function(users) {
-    if (input.length === 0) {
-    } else {
-      $("#user-search-result").empty();
-      var chat_member_list = [];
-      $("#chat-group-users").find('.chat_member_id').each( function( element ) {
-        chat_member_list.push(element.value);
+  if (input.length === 0) {
+    console.log(input)
+  } else {
+    $("#user-search-result").empty();
+    var chat_member_list = [];
+    $("#chat-group-users").find('.chat_member_id').each( function( element ) {
+      chat_member_list.push(element.value);
       });
       users.forEach(function(user){
         if(chat_member_list.indexOf(String(user.id)) == -1){
@@ -38,7 +39,7 @@ $(function() {
           $('#user-search-result').append(html);
         }
       });
-    }
+  }
   })
     .fail(function(){
       alert('Error');
