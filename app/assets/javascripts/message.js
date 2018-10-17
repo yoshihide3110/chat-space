@@ -16,9 +16,7 @@ $(function(){
                       </div>
                   </div>
                   <div class="bottom-message">
-                    <p class="bottom-message__content">
                      ${content}
-                    </p>
                      ${image}
                   </div>
                 </div>`
