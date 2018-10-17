@@ -26,7 +26,6 @@ $(function() {
     })
   .done(function(users) {
   if (input.length === 0) {
-    console.log(input)
   } else {
     $("#user-search-result").empty();
     var chat_member_list = [];
